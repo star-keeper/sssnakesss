@@ -47,7 +47,6 @@ class TestLab2(unittest.TestCase):
         for hexString, b64String in testCases:
             self.assertEqual(b64ToHex(b64String), hexString)
 
-    @unittest.skip('Not yet implemented')
     def test_s1c02_xor(self):
         '''
         Starting here, write your own tests. You can generate tests in a variety
@@ -60,7 +59,20 @@ class TestLab2(unittest.TestCase):
         you can work by hand, or generate the test cases using other code you write
         or online calculators.
         '''
-        self.assertEqual(True, False)
+        testCases = [
+            (
+                b'1c0111001f010100061a024b53535009181c',
+                b'686974207468652062756c6c277320657965',
+                b'746865206b696420646f6e277420706c6179'
+            ),
+            (b'1', b'0', b'1'),
+            (b'', b'', b'')
+
+        ]
+        for input1, input2, XORresult in testCases:
+            self.assertEqual(len(input1), len(XORresult))
+            self.assertEqual(len(input2), len(XORresult))
+            self.assertEqual(xor(input1,input2), XORresult)
 
     @unittest.skip('Not yet implemented')
     def test_s1c03_caesarEncrypt(self):
