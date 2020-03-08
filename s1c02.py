@@ -7,9 +7,8 @@ def xor(s1, s2):
     s1_asBytes = ba.unhexlify(s1)
     s2_asBytes = ba.unhexlify(s2)
 
-    res_asBytes = b''
+    res_asInt = []
     for i in range(len(s1_asBytes)):
-        res_asBytes += bytes(s1_asBytes[i] ^ s2_asBytes[i])
-        print(s1_asBytes[i]^s2_asBytes[i])
-    
+        res_asInt.append(s1_asBytes[i] ^ s2_asBytes[i])
+    res_asBytes = bytes(res_asInt)
     return ba.hexlify(res_asBytes)
