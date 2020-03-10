@@ -86,7 +86,6 @@ class TestLab2(unittest.TestCase):
     def test_s1c03_scoreText(self):
         self.assertEqual(True, False)
 
-
     '''
        ********
        Remember! You can and should add more test methods to this file to test 
@@ -94,8 +93,6 @@ class TestLab2(unittest.TestCase):
        ********
     '''
 
-
-    @unittest.skip('Not yet implemented')
     def test_s1c03_solveS1C3(self):
         '''
         You might find that it's less clear what the testable contract of the methods
@@ -103,7 +100,15 @@ class TestLab2(unittest.TestCase):
         this test method, and instead just test the helper methods you write to make
         solveSXCY() methods work.
         '''
-        self.assertEqual(True, False)
+        testCases = [
+            # for key  b'58', message =  b"Cooking MC's like a pound of bacon"
+            (
+                b'1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736',
+                b"Cooking MC's like a pound of bacon"
+            )
+        ]
+        for message, expected in testCases:
+            self.assertEqual(solveS1C03(message), expected)
 
     @unittest.skip('Not yet implemented')
     def test_s1c04_solveS1C4(self):
